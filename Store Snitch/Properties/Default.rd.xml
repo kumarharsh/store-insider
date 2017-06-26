@@ -25,6 +25,7 @@
     
     
     <!-- Add your application specific runtime directives here. -->
+    <Type Name=".MyClass" Dynamic="Required All"/>
 
 
   </Application>

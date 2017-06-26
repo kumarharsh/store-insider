@@ -2,12 +2,55 @@
     x:Class="Store_Snitch.MainPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:Store_Snitch"
+    xmlns:local="using:Store_Insider"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Pivot>
+            <PivotItem Header="Insider">
+                <StackPanel>
+                    <TextBlock HorizontalAlignment="Left" Margin="0,20,0,0" TextWrapping="Wrap" Text="Enter URL of any Windows Store app" VerticalAlignment="Top" />
+                    <TextBox Name="storeURLInput" HorizontalAlignment="Left" Margin="0,10,0,0" TextWrapping="NoWrap" Text="" PlaceholderText="Enter the Windows Store URL of any app" VerticalAlignment="Top" Width="300" />
+                    <Button Content="Fetch Insider Details" HorizontalAlignment="Left" Margin="0,10,0,0" VerticalAlignment="Top" Name="fetchButton" Click="Button_Click" />
 
+                    <TextBlock FontSize="50" Foreground="{ThemeResource HyperlinkButtonForeground}" FontFamily="Segoe MDL2 Assets" Text="&#xE82F;" VerticalAlignment="Center" Margin="0,50,0,0" />
+                    <RichTextBlock Margin="0" VerticalAlignment="Center">
+                        <Paragraph>You can see insider details for any app in your store. Just open the app's listing in the Windows store, click on the
+                            <Bold>Share</Bold> button, and select this app on the share screen.
+                        </Paragraph>
+                    </RichTextBlock>
+                </StackPanel>
+            </PivotItem>
+            <PivotItem Header="About">
+                <StackPanel>
+                    <TextBlock Text="Store Insider" Style="{StaticResource SubheaderTextBlockStyle}"></TextBlock>
+                    <TextBlock Text="{x:Bind Version}" Foreground="{ThemeResource SystemControlForegroundAccentBrush}" />
+
+                    <TextBlock Text="Purpose" Style="{StaticResource TitleTextBlockStyle}" Margin="0,50,0,0"></TextBlock>
+                    <RichTextBlock>
+                        <Paragraph>This is a simple app with only one purpose - to give
+                            <Bold>you</Bold> the app details which the official store doesn't. This app is originally inspired by the
+                            <Bold>
+                                <Hyperlink NavigateUri="https://wpsnitch.appspot.com">WPSnitch</Hyperlink>
+                            </Bold> web app.
+                        </Paragraph>
+                        <Paragraph Margin="0,20,0,0">This is my first try at a UWP app, and will be having a lot of mistakes or things which can be done better. If you want to contribute, here's the source code:
+                            <Hyperlink NavigateUri="https://github.com/kumarharsh/store-insider">https://github.com/kumarharsh/store-insider</Hyperlink> . To report bugs, open an issue on this project's repository, and mention the app &amp; app URL you're having trouble with.
+                        </Paragraph>
+                    </RichTextBlock>
+                    <TextBlock Text="Credits" Style="{StaticResource TitleTextBlockStyle}" Margin="0,50,0,0"></TextBlock>
+                    <RichTextBlock>
+                        <Paragraph>Humanizer.Core:
+                            <Hyperlink NavigateUri="https://github.com/Humanizr/Humanizer">https://github.com/Humanizr/Humanizer</Hyperlink>
+                        </Paragraph>
+                        <Paragraph>Newtonsoft.Json:
+                            <Hyperlink NavigateUri="https://github.com/JamesNK/Newtonsoft.Json">https://github.com/JamesNK/Newtonsoft.Json</Hyperlink>
+                        </Paragraph>
+                    </RichTextBlock>
+                </StackPanel>
+            </PivotItem>
+        </Pivot>
     </Grid>
 </Page>
