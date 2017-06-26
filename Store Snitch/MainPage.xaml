@@ -26,7 +26,8 @@
             <PivotItem Header="About">
                 <StackPanel>
                     <TextBlock Text="Store Insider" Style="{StaticResource SubheaderTextBlockStyle}"></TextBlock>
-                    <TextBlock Text="{x:Bind Version}" Foreground="{ThemeResource SystemControlForegroundAccentBrush}" />
+                    <TextBlock Foreground="{ThemeResource SystemControlForegroundBaseMediumBrush}">An app by <Run Text="Kumar Harsh" Foreground="{ThemeResource SystemControlForegroundBaseHighBrush}" /></TextBlock>
+                    <TextBlock Foreground="{ThemeResource SystemControlForegroundBaseMediumBrush}">Version <Run Text="{x:Bind Version}" Foreground="{ThemeResource SystemControlForegroundBaseHighBrush}" /></TextBlock>
 
                     <TextBlock Text="Purpose" Style="{StaticResource TitleTextBlockStyle}" Margin="0,50,0,0"></TextBlock>
                     <RichTextBlock>
